@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment} from 'react';
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Products from './components/Products'
 
 function App() {
+
+  const fecha = new Date().getFullYear();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Fragment>
+      <Header 
+        titulo='Tienda Viertual'
+      />
+      <Products/>
+      <Footer
+        fecha={fecha}
+      />
+    </Fragment>
+    ///////// Fragment ayuda a poder envolver todos los elementos que se necesitan regresar sin alterar 
+    ///////// el diseño como lo podria alterar un div ya que el return necesita solo regresar un 
+    ///////// elemento. Fragment se debe de importar desde react
+    // <Fragment>
+    // <h1>{empleado.nombre}</h1>
+    // <h2>{empleado.trabajo}</h2>
+    // </Fragment>
+    ///////// Sin JSX
+    /////////  React.createElement(
+    //   'h1',
+    //   {
+    //     id: 'heading',
+    //     className: 'heading'
+    //   },
+    //   'Hola Mundo'
+    // )
   );
 }
 
